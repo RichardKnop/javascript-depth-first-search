@@ -1,6 +1,6 @@
 "use strict";
 
-define(["DFS/Node"], function (Node) {
+define(["DFS/Node", "DFS/Algorithm"], function (Node, Algorithm) {
 
     return function () {
 
@@ -16,15 +16,35 @@ define(["DFS/Node"], function (Node) {
                 node9 = new Node(9),
                 node10 = new Node(10),
                 node11 = new Node(11),
-                node12 = new Node(12);
+                node12 = new Node(12),
+                dfs = new Algorithm();
 
-            node1.addChild(node2, node7, node8);
-            node2.addChild(node3, node6);
-            node3.addChild(node4, node5);
-            node8.addChild(node9, node12);
-            node9.addChild(node10, node11);
+            node1.addChild(node2);
+            node1.addChild(node7);
+            node1.addChild(node8);
+            node2.addChild(node3);
+            node2.addChild(node6);
+            node3.addChild(node4);
+            node3.addChild(node5);
+            node8.addChild(node9);
+            node8.addChild(node12);
+            node9.addChild(node10);
+            node9.addChild(node11);
 
-            console.log("hello");
+            document.getElementById("search").addEventListener("click", function() {
+                var searchFor = parseInt(document.getElementById("searchFor").value, 10),
+                    resultEl = document.getElementById("result"),
+                    result, route;
+                try {
+                    result = dfs.search(searchFor, node1);
+                    route = dfs.getLastRoute();
+                    console.log(route);
+                    resultEl.innerHTML = "Found. Algorithm went like this: " + route.join(" => ");
+                } catch (e) {
+                    resultEl.innerHTML = e;
+                }
+                return false;
+            }, false);
         };
 
     };

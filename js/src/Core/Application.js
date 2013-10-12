@@ -31,12 +31,14 @@ define(["DFS/Node", "DFS/Algorithm"], function (Node, Algorithm) {
             node9.addChild(node10);
             node9.addChild(node11);
 
-            document.getElementById("search").addEventListener("click", function() {
+            document.getElementById("search").addEventListener("click", function () {
                 var searchFor = parseInt(document.getElementById("searchFor").value, 10),
                     resultEl = document.getElementById("result"),
-                    result, route;
+                    result,
+                    route;
                 try {
                     result = dfs.search(searchFor, node1);
+                    console.log(result.getValue());
                     route = dfs.getLastRoute();
                     resultEl.innerHTML = "Found. Algorithm went like this: " + route.join(" => ");
                 } catch (e) {

@@ -4,8 +4,7 @@ define([], function () {
 
     return function () {
 
-        var that = this,
-            route;
+        var that = this, route;
 
         function recursiveSearch(searchFor, node) {
             that.addRoutePoint(node.getValue());
@@ -36,7 +35,7 @@ define([], function () {
             throw "'" + searchFor + "' not found";
         };
 
-        this.getLastRoute = function() {
+        this.getLastRoute = function () {
             return route;
         };
 

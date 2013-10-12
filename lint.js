@@ -43,7 +43,8 @@ var config = {
                     "strictEqual",
                     "requirejs",
                     "ok",
-                    "deepEqual"
+                    "deepEqual",
+                    "document"
                 ]
             }
         },
@@ -68,7 +69,8 @@ var config = {
                     "equal"         : true,
                     "strictEqual"   : true,
                     "ok"            : true,
-                    "deepEqual"     : true
+                    "deepEqual"     : true,
+                    "document"      : true
                 }
             }
         }

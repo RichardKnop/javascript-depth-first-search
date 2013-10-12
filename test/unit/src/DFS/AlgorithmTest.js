@@ -1,6 +1,6 @@
 "use strict";
 
-define(["DFS/Node", "DFS/Algorithm"], function (Node, Algorithm) {
+define(["js/src/DFS/Node", "js/src/DFS/Algorithm"], function (Node, Algorithm) {
 
     module("DFS/Algorithm");
 

@@ -38,7 +38,6 @@ define(["DFS/Node", "DFS/Algorithm"], function (Node, Algorithm) {
                 try {
                     result = dfs.search(searchFor, node1);
                     route = dfs.getLastRoute();
-                    console.log(route);
                     resultEl.innerHTML = "Found. Algorithm went like this: " + route.join(" => ");
                 } catch (e) {
                     resultEl.innerHTML = e;
